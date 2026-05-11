@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { publicUrl } from "@/lib/publicPath";
 import { useCallback, useEffect, useState } from "react";
 
 const slides: { src: string; alt: string; caption: string; sub: string }[] = [
@@ -59,7 +60,7 @@ export function HeroCarousel() {
           }}
         >
           <Image
-            src={s.src}
+            src={publicUrl(s.src)}
             alt={s.alt}
             fill
             priority={i === 0}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
+import { ogImagePath } from "@/lib/publicPath";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -26,7 +27,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sultana — Moroccan wellness",
     description: "Hammam rituals, natural textures, quiet luxury.",
-    images: [{ url: "/images/moroccan-hammam.webp", width: 1200, height: 630 }],
+    images: [
+      { url: ogImagePath("/images/moroccan-hammam.webp"), width: 1200, height: 630 },
+    ],
   },
 };
 

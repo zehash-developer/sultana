@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getProductBySlug, products } from "@/lib/products";
+import { ogImagePath } from "@/lib/publicPath";
 import { ProductGallery } from "@/components/ProductGallery";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -23,7 +24,7 @@ export async function generateMetadata({
     title: `${product.name} — Sultana`,
     description: product.tagline,
     openGraph: {
-      images: [{ url: product.image, width: 800, height: 1000 }],
+      images: [{ url: ogImagePath(product.image), width: 800, height: 1000 }],
     },
   };
 }

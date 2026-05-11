@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { products } from "@/lib/products";
+import { publicUrl } from "@/lib/publicPath";
 import { FadeIn } from "./FadeIn";
 
 export function ProductGrid() {
@@ -29,7 +30,7 @@ export function ProductGrid() {
                   className="relative aspect-[4/5] w-full overflow-hidden"
                 >
                   <Image
-                    src={p.image}
+                    src={publicUrl(p.image)}
                     alt={p.name}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

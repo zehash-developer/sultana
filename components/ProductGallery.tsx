@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import type { Product } from "@/lib/products";
+import { publicUrl } from "@/lib/publicPath";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function ProductGallery({ product }: { product: Product }) {
@@ -22,7 +23,7 @@ export function ProductGallery({ product }: { product: Product }) {
             className="absolute inset-0"
           >
             <Image
-              src={images[active]}
+              src={publicUrl(images[active])}
               alt={`${product.name} view ${active + 1}`}
               fill
               className="object-cover"
@@ -46,7 +47,7 @@ export function ProductGallery({ product }: { product: Product }) {
             aria-label={`Show image ${i + 1}`}
           >
             <Image
-              src={src}
+              src={publicUrl(src)}
               alt=""
               fill
               className="object-cover"
