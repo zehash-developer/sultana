@@ -1,26 +1,60 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f9f7f2;
+  --foreground: #2c1810;
+  --cream: #f9f7f2;
+  --sand: #ebe4d9;
+  --olive: #3d4f3f;
+  --chocolate: #2c1810;
+  --gold: #b8956a;
+  --muted-blue: #5b7c8a;
+  --terracotta: #c67b6e;
+  --border-subtle: rgb(44 24 16 / 0.08);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cream: var(--cream);
+  --color-sand: var(--sand);
+  --color-olive: var(--olive);
+  --color-chocolate: var(--chocolate);
+  --color-gold: var(--gold);
+  --color-muted: var(--muted-blue);
+  --color-terracotta: var(--terracotta);
+  --font-sans: var(--font-montserrat);
+  --font-serif: var(--font-playfair);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background: var(--cream);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+}
+
+@keyframes hero-fade {
+  from {
+    opacity: 0.35;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-hero-fade {
+  animation: hero-fade 0.9s ease-out both;
+}
+
+@keyframes shimmer-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
